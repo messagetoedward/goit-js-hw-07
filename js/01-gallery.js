@@ -1,4 +1,48 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
-console.log(galleryItems);
+const gallery = galleryItems;
+console.log(gallery);
+const divGallery = document.querySelector('div.gallery');
+console.log(divGallery);
+
+const markup = gallery.map(({preview, original, description}) => {
+    return `<a class="gallery__link" href="${original}">
+    <img
+      class="gallery__image"
+      src="${preview}"
+      data-source="${original}"
+      alt="${description}"
+    />
+  </a>`
+}).join('');
+
+divGallery.insertAdjacentHTML('beforeend', markup)
+
+divGallery.addEventListener('click', urlImage);
+
+function urlImage(event) {
+    event.preventDefault();
+    const url = event.target.dataset.source;
+    if (!url) return;
+    console.log(url);
+    const instance = basicLightbox.create(`
+    <img src="${url}" width="800" height="600">
+`);
+    instance.show(() => console.log('lighboxvisible'));
+}
+
+
+
+
+
+// divGallery.addEventListener('click', handleClick);
+
+// function handleClick(event) {
+//     event.preventDefault();
+//     imgLink.forEach(el => {
+//         console.log(el.src);
+//     });
+// }
+
+
