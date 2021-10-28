@@ -33,16 +33,3 @@ function urlImage(event) {
 }
 
 
-
-
-
-// divGallery.addEventListener('click', handleClick);
-
-// function handleClick(event) {
-//     event.preventDefault();
-//     imgLink.forEach(el => {
-//         console.log(el.src);
-//     });
-// }
-
-
