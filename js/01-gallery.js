@@ -2,9 +2,8 @@ import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
 const gallery = galleryItems;
-console.log(gallery);
 const divGallery = document.querySelector('div.gallery');
-console.log(divGallery);
+
 
 const markup = gallery.map(({preview, original, description}) => {
     return `<a class="gallery__link" href="${original}">
